@@ -28,4 +28,4 @@ jobs:
           AWS_REGION: 'ap-northeast-1'
         run: |
           zip -r function.zip .
-          aws lambda update-function-code --function-name my-function --zip-file fileb://function.zip
+          aws lambda update-function-code --function-name stock_holdings --zip-file fileb://stock_holdings.zip
