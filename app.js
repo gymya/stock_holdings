@@ -39,4 +39,9 @@ app.use(function (err, req, res, next) {
   res.render('error');
 });
 
+app.use((req, res, next) => {
+  console.log('Request Path:', req.path);
+  next();
+});
+
 module.exports = app;
