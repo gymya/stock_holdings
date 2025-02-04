@@ -5,6 +5,8 @@ const convertXLSX = require('@/middleware/convertXLSX');
 var router = express.Router();
 
 const getVolKData = async (symbol) => {
+  console.log(`Fetching ${symbol} data...`);
+
   try {
     const VolKData = {
       symbol,
@@ -47,10 +49,13 @@ const getVolKData = async (symbol) => {
     return new Promise((resolve) => {
       resolve({
         symbol,
-        totalDifferenceVolK: 'failed',
-        totalOverbuyVolK: 'failed',
-        totalOversellVolK: 'failed',
-        tradeVolumeRate: 'failed',
+        totalOverbuyVolK: 'Error',
+        totalOversellVolK: 'Error',
+        tradeVolumeRate: 'Error',
+        totalDifferenceVolK1D: 'Error',
+        totalDifferenceVolK5D: 'Error',
+        totalDifferenceVolK10D: 'Error',
+        totalDifferenceVolK20D: 'Error',
       });
     });
   }
