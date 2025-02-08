@@ -2,5 +2,4 @@
 const app = require('./app');
 const serverless = require('serverless-http');
 
-
-export const handler = serverless(app);
+module.exports.handler = serverless(app);
