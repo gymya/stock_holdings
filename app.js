@@ -6,7 +6,7 @@ var logger = require('morgan');
 require('module-alias/register');
 
 var indexRouter = require('./routes/index');
-var holdingsRouter = require('./routes/stock/holdings');
+var holdingsRouter = require('./routes/holdings');
 
 var app = express();
 
@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use('/', indexRouter); test
+app.use('/', indexRouter);
 app.use('/stock', holdingsRouter);
 
 // catch 404 and forward to error handler
